@@ -210,7 +210,7 @@
         this.showTab = 'table';
       },
       async createBook() {
-        const response = await fetch(`${this.$url}/.netlify/functions/books`, {
+        const response = await fetch('/.netlify/functions/books', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -240,7 +240,7 @@
         this.editingBook = null;
       },
       async updateBook() {
-        const response = await fetch(`${this.$url}/.netlify/functions/books/${this.editingBook.id}`, {
+        const response = await fetch(`/.netlify/functions/books/${this.editingBook.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -256,7 +256,7 @@
         this.cancelEdit();
       },
       async deleteBook(book) {
-        const response = await fetch(`${this.$url}/.netlify/functions/books/${book.id}`, {
+        const response = await fetch(`/.netlify/functions/books/${book.id}`, {
           method: 'DELETE',
         });
   
