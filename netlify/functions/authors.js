@@ -78,7 +78,7 @@ app.post('/', (req, res) => {
   res.status(201).json(newAuthor);
 });
 
-// Update an existing author
+
 app.put('/:id', (req, res) => {
   const authorIndex = authors.findIndex(a => a.id === req.params.id);
 
