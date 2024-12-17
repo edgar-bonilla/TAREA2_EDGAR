@@ -34,9 +34,12 @@
               <td>{{ book.author }}</td>
               <td>{{ book.publisher }}</td>
               <td class="action-buttons">
-                <button class="btn btn-warning btn-sm me-2" @click="editBook(book)">Edit</button>
-                <button class="btn btn-danger btn-sm" @click="deleteBook(book)">Delete</button>
+                <div class="d-flex ">
+                  <button class="btn btn-warning btn-sm" @click="editBook(book)">Edit</button>
+                  <button class="btn btn-danger btn-sm" @click="deleteBook(book)">Delete</button>
+                </div>
               </td>
+
             </tr>
           </tbody>
         </table>
@@ -56,43 +59,50 @@
               <div class="mb-3 row">
                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="newBook.title" id="title" class="form-control" placeholder="Enter title" required />
+                  <input type="text" v-model="newBook.title" id="title" class="form-control" placeholder="Enter title"
+                    required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="edition" class="col-sm-2 col-form-label">Edition</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="newBook.edition" id="edition" class="form-control" placeholder="Enter edition" required />
+                  <input type="text" v-model="newBook.edition" id="edition" class="form-control"
+                    placeholder="Enter edition" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="copyright" class="col-sm-2 col-form-label">Copyright</label>
                 <div class="col-sm-7">
-                  <input type="number" v-model="newBook.copyright" id="copyright" class="form-control" placeholder="Enter copyright year" required />
+                  <input type="number" v-model="newBook.copyright" id="copyright" class="form-control"
+                    placeholder="Enter copyright year" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="language" class="col-sm-2 col-form-label">Language</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="newBook.language" id="language" class="form-control" placeholder="Enter language" required />
+                  <input type="text" v-model="newBook.language" id="language" class="form-control"
+                    placeholder="Enter language" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="pages" class="col-sm-2 col-form-label">Pages</label>
                 <div class="col-sm-7">
-                  <input type="number" v-model="newBook.pages" id="pages" class="form-control" placeholder="Enter number of pages" required />
+                  <input type="number" v-model="newBook.pages" id="pages" class="form-control"
+                    placeholder="Enter number of pages" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="author" class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="newBook.author" id="author" class="form-control" placeholder="Enter author" required />
+                  <input type="text" v-model="newBook.author" id="author" class="form-control"
+                    placeholder="Enter author" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="newBook.publisher" id="publisher" class="form-control" placeholder="Enter publisher" required />
+                  <input type="text" v-model="newBook.publisher" id="publisher" class="form-control"
+                    placeholder="Enter publisher" required />
                 </div>
               </div>
               <div class="d-flex">
@@ -116,43 +126,50 @@
               <div class="mb-3 row">
                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="editingBook.title" id="title" class="form-control" placeholder="Enter title" required />
+                  <input type="text" v-model="editingBook.title" id="title" class="form-control"
+                    placeholder="Enter title" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="edition" class="col-sm-2 col-form-label">Edition</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="editingBook.edition" id="edition" class="form-control" placeholder="Enter edition" required />
+                  <input type="text" v-model="editingBook.edition" id="edition" class="form-control"
+                    placeholder="Enter edition" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="copyright" class="col-sm-2 col-form-label">Copyright</label>
                 <div class="col-sm-7">
-                  <input type="number" v-model="editingBook.copyright" id="copyright" class="form-control" placeholder="Enter copyright year" required />
+                  <input type="number" v-model="editingBook.copyright" id="copyright" class="form-control"
+                    placeholder="Enter copyright year" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="language" class="col-sm-2 col-form-label">Language</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="editingBook.language" id="language" class="form-control" placeholder="Enter language" required />
+                  <input type="text" v-model="editingBook.language" id="language" class="form-control"
+                    placeholder="Enter language" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="pages" class="col-sm-2 col-form-label">Pages</label>
                 <div class="col-sm-7">
-                  <input type="number" v-model="editingBook.pages" id="pages" class="form-control" placeholder="Enter number of pages" required />
+                  <input type="number" v-model="editingBook.pages" id="pages" class="form-control"
+                    placeholder="Enter number of pages" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="author" class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="editingBook.author" id="author" class="form-control" placeholder="Enter author" required />
+                  <input type="text" v-model="editingBook.author" id="author" class="form-control"
+                    placeholder="Enter author" required />
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
                 <div class="col-sm-7">
-                  <input type="text" v-model="editingBook.publisher" id="publisher" class="form-control" placeholder="Enter publisher" required />
+                  <input type="text" v-model="editingBook.publisher" id="publisher" class="form-control"
+                    placeholder="Enter publisher" required />
                 </div>
               </div>
               <div class="d-flex">

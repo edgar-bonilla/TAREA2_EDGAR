@@ -26,17 +26,8 @@ let authors = [
     ]
   },
   {
-    name: "Donald Knuth",
-    nationality: "American",
-    birth_year: 1938,
-    fields: [
-      "Algorithms",
-      "Computer Programming"
-    ]
-  },
-  {
     id: 3,
-    name: "Donald Knuth editado",
+    name: "Donald Knuth",
     nationality: "American",
     birth_year: 1938,
     fields: [
@@ -53,9 +44,9 @@ app.get('/', (req, res) => {
   res.json(authors);
 });
 
-
+// Get a specific author by ID
 app.get('/:id', (req, res) => {
-  const author = authors.find(a => a.id === req.params.id);
+  const author = authors.find(a => a.id === parseInt(req.params.id));
   if (!author) {
     return res.status(404).send('Author not found');
   }
@@ -71,16 +62,15 @@ app.post('/', (req, res) => {
     return res.status(400).send('Author already exists');
   }
 
-
-  newAuthor.id = authors.length + 1;
+  
+  newAuthor.id = authors.length > 0 ? Math.max(...authors.map(a => a.id)) + 1 : 1;
 
   authors.push(newAuthor);
   res.status(201).json(newAuthor);
 });
 
-
 app.put('/:id', (req, res) => {
-  const authorIndex = authors.findIndex(a => a.id === req.params.id);
+  const authorIndex = authors.findIndex(a => a.id === parseInt(req.params.id));
 
   if (authorIndex === -1) {
     return res.status(404).send('Author not found');
@@ -92,14 +82,14 @@ app.put('/:id', (req, res) => {
 
 
 app.delete('/:id', (req, res) => {
-  const authorIndex = authors.findIndex(a => a.id === req.params.id);
+  const authorIndex = authors.findIndex(a => a.id === parseInt(req.params.id));
 
   if (authorIndex === -1) {
     return res.status(404).send('Author not found');
   }
 
   authors.splice(authorIndex, 1);
-  res.status(204).send(); 
+  res.status(204).send();
 });
 
 const exp = express();

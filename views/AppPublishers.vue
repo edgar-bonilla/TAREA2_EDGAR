@@ -211,7 +211,7 @@
   </script>
   
   <style scoped>
-  /* Aquí puedes agregar estilos específicos para el componente */
+  
   .action-buttons button {
     margin-right: 5px;
   }
